@@ -17,6 +17,36 @@ git init
 
 Edit `Cargo.toml` for author and project name, and you're ready to go.
 
+## MacOS
+
+### Install Rust and compiler via homebrew
+
+```shell
+brew cask install gcc-arm-embedded
+brew install open-ocd
+brew install rustup-init
+
+rustup-init
+rustup default nightly
+rustup target add thumbv7m-none-eabi
+```
+
+### Get example code and test
+
+```shell
+git clone https://github.com/SteveCooling/blue-pill-quickstart.git
+cd blue-pill-quickstart
+openocd && cargo run
+```
+
+### Install VSCode plugins
+
+* Better TOML
+* C/C++
+* Native Debug
+* Rust
+* Rust (rls)
+
 ## Setting up your machine
 
 First, you need hardware. Buy a [blue pill](https://www.aliexpress.com/w/wholesale-stm32f103c8t6.html?&SortType=total_tranpro_desc) and an [ST-Link V2](https://www.aliexpress.com/w/wholesale-st-link-v2.html?SortType=total_tranpro_desc). You also need a computer, the commands below are for a Debian based distribution. It should be easy to adapt the instructions to other operating systems (Linux, MacOSX, Windows).
